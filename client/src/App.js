@@ -18,7 +18,6 @@ import Register from './components/auth/Register';
 import Dashboard from './components/dashboard/Dashboard';
 
 import './App.css';
-import { clearCurrentProfile } from './actions/profileActions';
 
 if(localStorage.jwtToken) {
   // Set auth token header auth

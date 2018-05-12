@@ -1,12 +1,21 @@
-import { combineReducers } from 'redux';
 import authReducer from './authReducer';
 import errorReducer from './errorReducer';
 import profileReducer from './profileReducer';
 import postReducer from './postReducer';
 
-export default combineReducers({
+const rehydrated = (state = false, action) => {
+  switch (action.type) {
+    case 'persist/REHYDRATE':
+      return true;
+    default:
+      return state;
+  }
+};
+
+export default {
+  rehydrated,
   auth: authReducer,
   errors: errorReducer,
   profile: profileReducer,
   post: postReducer
-});
+};

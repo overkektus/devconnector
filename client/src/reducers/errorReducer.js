@@ -1,6 +1,8 @@
+import Store from '../store/error';
+
 import { GET_ERRORS, CLEAR_ERRORS } from '../actions/types';
 
-const initialState = {};
+const initialState = Store;
 
 export default function(state = initialState, action) {
   switch (action.type) {

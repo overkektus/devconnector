@@ -1,3 +1,5 @@
+import Store from '../store/post';
+
 import {
   ADD_POST,
   GET_POSTS,
@@ -6,11 +8,7 @@ import {
   POST_LOADING
 } from '../actions/types';
 
-const initialState = {
-  posts: [],
-  post: {},
-  loading: false
-};
+const initialState = Store;
 
 export default function(state = initialState, action) {
   switch (action.type) {

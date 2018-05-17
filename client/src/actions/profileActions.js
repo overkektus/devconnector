@@ -9,6 +9,8 @@ import {
   SET_CURRENT_USER
 } from './types';
 
+const hostname = 'https://immense-tor-55618.herokuapp.com';
+
 // Get current profile
 export const getCurrentProfile = () => dispatch => {
   dispatch(setProfileLoading());
@@ -125,7 +127,7 @@ export const deleteEducation = (id) => dispatch => {
 export const getProfiles = () => dispatch => {
   dispatch(setProfileLoading());
   axios
-    .get('/api/profile/all')
+    .get(`${hostname}/api/profile/all`)
     .then(res => 
       dispatch({
         type: GET_PROFILES,

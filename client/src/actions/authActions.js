@@ -4,11 +4,11 @@ import jwt_decode from 'jwt-decode';
 
 import { GET_ERRORS, SET_CURRENT_USER } from './types';
 
-const hostname = 'https://immense-tor-55618.herokuapp.com';
+import { HOSTNAME } from '../config';
 
 // Register User
 export const registerUser = (userData, history) => dispatch => {
-  axios.post(`${hostname}/api/users/register`, userData)
+  axios.post(`${HOSTNAME}/api/users/register`, userData)
     .then(res => history.push('/login'))
     .catch(err => 
       dispatch({
@@ -20,7 +20,7 @@ export const registerUser = (userData, history) => dispatch => {
 
 // Login - Get User Token
 export const loginUser = (userData) => dispatch => {
-  axios.post('/api/users/login', userData)
+  axios.post(`${HOSTNAME}/api/users/login`, userData)
     .then(res => {
       // Save to localStorage
       const { token } = res.data;

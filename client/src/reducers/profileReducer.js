@@ -1,3 +1,5 @@
+import Store from '../store/profile';
+
 import {
   GET_PROFILE,
   GET_PROFILES,
@@ -5,11 +7,7 @@ import {
   CLEAR_CURRENT_PROFILE
 } from '../actions/types';
 
-const initialState = {
-  profile: null,
-  profiles: null,
-  loading: false
-};
+const initialState = Store;
 
 export default function(state = initialState, action) {
   switch(action.type) {

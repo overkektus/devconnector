@@ -1,0 +1,3 @@
+rootProject.name = 'devconnector'
+
+include ':app'

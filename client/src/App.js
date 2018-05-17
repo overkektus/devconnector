@@ -6,7 +6,7 @@ import { setCurrentUser, logoutUser } from './actions/authActions';
 import { clearCurrentProfile } from './actions/profileActions';
 
 import { Provider } from 'react-redux';
-import store from './store';
+import StoreConf from './store';
 
 import PrivateRoute from './components/common/PrivateRoute';
 
@@ -27,6 +27,8 @@ import Posts from './components/posts/Posts';
 import Post from './components/post/Post';
 
 import './App.css';
+
+const { store } = StoreConf();
 
 if(localStorage.jwtToken) {
   // Set auth token header auth
